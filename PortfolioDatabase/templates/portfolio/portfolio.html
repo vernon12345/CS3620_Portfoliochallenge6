@@ -1,0 +1,29 @@
+<!doctype html>
+{%extends 'portfolio/base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{%block body%}
+{% for portfolio in Portfolio_list %}
+<div class="row">
+    <div class="col-md-3 offset-md-2">
+        <img class="card" height="150px" src="{{portfolio.portfolio_image}}"/>
+    </div>
+    <div class="col-md-4">
+        <h3>{{ portfolio.portfolio_name}}</h3>
+        <h5>{{ portfolio.portfolio_desc}}</h5>
+    </div>
+    <div class="col-md-2"></div>
+    <a href="{% url 'PortfolioDatabase:detail2' portfolio.id %}" class="btn btn-success">Details</a>
+</div>
+
+{% endfor %}
+{%endblock%}
+</body>
+</html

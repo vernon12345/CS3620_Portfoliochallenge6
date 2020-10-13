@@ -1,0 +1,30 @@
+<!doctype html>
+{%extends 'portfolio/base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+{%block body%}
+{% for hobby in Hobby_list %}
+<div class="row">
+    <div class="col-md-3 offset-md-2">
+        <img class="card" height="150px" src="{{hobby.Hobby_image}}"/>
+    </div>
+    <div class="col-md-4">
+        <h3>{{ hobby.Hobby_name}}</h3>
+        <h5>{{ hobby.Hobby_desc}}</h5>
+    </div>
+    <div class="col-md-2"></div>
+   <p></p> <a href="{% url 'PortfolioDatabase:detail' hobby.id %}" class="btn btn-success">Details</a></p>
+    <a href="{% url 'PortfolioDatabase:update_hobby' hobby.id %}" class="btn btn-primary">Edit</a></div>
+
+
+{% endfor %}
+{%endblock%}
+</body>
+</html>

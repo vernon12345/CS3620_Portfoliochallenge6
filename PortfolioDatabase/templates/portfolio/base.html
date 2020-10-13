@@ -1,0 +1,24 @@
+<!doctype html>
+{%load static%}
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark">
+     <a href="#" class="navbar-brand">Portfolio app</a>
+      <div class="navbar">
+          <a href="{% url 'PortfolioDatabase:Home' %}" class="nav-item nav-link">Home</a>
+          <a href="{% url 'PortfolioDatabase:Contact' %}" class="nav-item nav-link">Contact</a>
+          <a href="{% url 'PortfolioDatabase:Hobbies' %}" class="nav-item nav-link">Hobbies</a>
+          <a href="{% url 'PortfolioDatabase:Portfolio' %}" class="nav-item nav-link">Portfolio</a>
+          <a href="{% url 'PortfolioDatabase:create_hobby' %}" class="nav-item nav-link">Add Item</a>
+      </div>
+
+</nav>
+{%block body%}
+{%endblock%}
+</body>
+</html>
