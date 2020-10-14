@@ -5,6 +5,15 @@ from .models import contact
 
 
 
+
+class portfolioForm(forms.ModelForm):
+    class Meta:
+        model =portfolio
+        fields = ['portfolio_name', 'portfolio_desc', 'portfolio_image']
+
+
+
+
 class HobbyForm(forms.ModelForm):
     class Meta:
         model = Hobby
